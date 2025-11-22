@@ -53,6 +53,7 @@ namespace StudentGradeManagement.Forms
                 menuClass.Visible = true;
                 menuTeacher.Visible = true;
                 menuCourse.Visible = true;
+                menuGradeEntry.Visible = true;
                 menuGradeQuery.Visible = true;
             }
             else if (UserSession.IsTeacher())
