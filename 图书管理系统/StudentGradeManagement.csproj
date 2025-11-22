@@ -95,12 +95,6 @@
     <Compile Include="Forms\GradeQueryForm.Designer.cs">
       <DependentUpon>GradeQueryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StudentGradeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\StudentGradeForm.Designer.cs">
-      <DependentUpon>StudentGradeForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Grade.cs" />
@@ -138,9 +132,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GradeQueryForm.resx">
       <DependentUpon>GradeQueryForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentGradeForm.resx">
-      <DependentUpon>StudentGradeForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -19,7 +19,7 @@ namespace StudentGradeManagement.Utils
         public static string UserName { get; set; }
 
         /// <summary>
-        /// 用户角色（Admin-管理员, Teacher-教师, Student-学生）
+        /// 用户角色（仅支持Admin-管理员）
         /// </summary>
         public static string UserRole { get; set; }
 
@@ -60,24 +60,6 @@ namespace StudentGradeManagement.Utils
         public static bool IsAdmin()
         {
             return IsLoggedIn && UserRole == "Admin";
-        }
-
-        /// <summary>
-        /// 检查是否为教师
-        /// </summary>
-        /// <returns>是教师返回true，否则返回false</returns>
-        public static bool IsTeacher()
-        {
-            return IsLoggedIn && UserRole == "Teacher";
-        }
-
-        /// <summary>
-        /// 检查是否为学生
-        /// </summary>
-        /// <returns>是学生返回true，否则返回false</returns>
-        public static bool IsStudent()
-        {
-            return IsLoggedIn && UserRole == "Student";
         }
     }
 }

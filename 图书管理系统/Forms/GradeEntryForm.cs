@@ -39,22 +39,18 @@ namespace StudentGradeManagement.Forms
         }
 
         /// <summary>
-        /// 加载课程下拉框（只显示当前教师授课的课程）
+        /// 加载课程下拉框
         /// </summary>
         private void LoadCourseComboBox()
         {
             try
             {
+                // admin可以看到所有课程
                 string sql = @"SELECT CourseID, CourseName 
                               FROM Courses 
-                              WHERE TeacherID = @TeacherID 
                               ORDER BY CourseID";
-                
-                SqlParameter[] parameters = {
-                    new SqlParameter("@TeacherID", UserSession.UserId)
-                };
 
-                DataTable dt = DBHelper.ExecuteQuery(sql, parameters);
+                DataTable dt = DBHelper.ExecuteQuery(sql);
 
                 cmbCourse.DataSource = dt;
                 cmbCourse.DisplayMember = "CourseName";

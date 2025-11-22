@@ -35,7 +35,6 @@ namespace StudentGradeManagement.Forms
             this.menuCourse = new System.Windows.Forms.ToolStripMenuItem();
             this.menuGradeEntry = new System.Windows.Forms.ToolStripMenuItem();
             this.menuGradeQuery = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuMyGrade = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
@@ -50,7 +49,6 @@ namespace StudentGradeManagement.Forms
             this.menuCourse,
             this.menuGradeEntry,
             this.menuGradeQuery,
-            this.menuMyGrade,
             this.menuLogout});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -100,13 +98,6 @@ namespace StudentGradeManagement.Forms
             this.menuGradeQuery.Text = "成绩查询";
             this.menuGradeQuery.Click += new System.EventHandler(this.menuGradeQuery_Click);
             // 
-            // menuMyGrade
-            // 
-            this.menuMyGrade.Name = "menuMyGrade";
-            this.menuMyGrade.Size = new System.Drawing.Size(68, 21);
-            this.menuMyGrade.Text = "我的成绩";
-            this.menuMyGrade.Click += new System.EventHandler(this.menuMyGrade_Click);
-            // 
             // menuLogout
             // 
             this.menuLogout.Name = "menuLogout";
@@ -151,7 +142,6 @@ namespace StudentGradeManagement.Forms
         private System.Windows.Forms.ToolStripMenuItem menuCourse;
         private System.Windows.Forms.ToolStripMenuItem menuGradeEntry;
         private System.Windows.Forms.ToolStripMenuItem menuGradeQuery;
-        private System.Windows.Forms.ToolStripMenuItem menuMyGrade;
         private System.Windows.Forms.ToolStripMenuItem menuLogout;
         private System.Windows.Forms.Label lblWelcome;
     }

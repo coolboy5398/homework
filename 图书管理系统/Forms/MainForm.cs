@@ -36,37 +36,13 @@ namespace StudentGradeManagement.Forms
         /// </summary>
         private void ConfigureMenuByRole()
         {
-            // 隐藏所有菜单项
-            menuStudent.Visible = false;
-            menuClass.Visible = false;
-            menuTeacher.Visible = false;
-            menuCourse.Visible = false;
-            menuGradeEntry.Visible = false;
-            menuGradeQuery.Visible = false;
-            menuMyGrade.Visible = false;
-
-            // 根据角色显示对应菜单
-            if (UserSession.IsAdmin())
-            {
-                // 管理员：显示所有管理菜单
-                menuStudent.Visible = true;
-                menuClass.Visible = true;
-                menuTeacher.Visible = true;
-                menuCourse.Visible = true;
-                menuGradeEntry.Visible = true;
-                menuGradeQuery.Visible = true;
-            }
-            else if (UserSession.IsTeacher())
-            {
-                // 教师：显示成绩录入和查询
-                menuGradeEntry.Visible = true;
-                menuGradeQuery.Visible = true;
-            }
-            else if (UserSession.IsStudent())
-            {
-                // 学生：只显示我的成绩
-                menuMyGrade.Visible = true;
-            }
+            // 只支持管理员登录，显示所有管理菜单
+            menuStudent.Visible = true;
+            menuClass.Visible = true;
+            menuTeacher.Visible = true;
+            menuCourse.Visible = true;
+            menuGradeEntry.Visible = true;
+            menuGradeQuery.Visible = true;
         }
 
         /// <summary>
@@ -126,10 +102,6 @@ namespace StudentGradeManagement.Forms
             form.ShowDialog();
         }
 
-        private void menuMyGrade_Click(object sender, EventArgs e)
-        {
-            StudentGradeForm form = new StudentGradeForm();
-            form.ShowDialog();
-        }
+
     }
 }
