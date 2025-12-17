@@ -1,0 +1,83 @@
+# 实现计划
+
+- [x] 1. 创建 WinForms 项目
+  - 使用 Visual Studio 创建 Windows Forms App (.NET Framework) 项目
+  - 项目名称：TodoList
+  - 只保留 Form1.cs 一个窗体文件
+  - _需求: 6.1_
+
+- [x] 2. 设计窗体界面
+  - [x] 2.1 添加输入区域
+    - 添加 TextBox 控件 (txtTask) 用于输入任务
+    - 添加 Button 控件 (btnAdd) 用于添加任务
+    - _需求: 1.1_
+  - [x] 2.2 添加任务列表
+    - 添加 CheckedListBox 控件 (lstTasks) 显示任务列表
+    - 设置合适的大小和字体
+    - _需求: 2.1, 6.2_
+  - [x] 2.3 添加删除按钮
+    - 添加 Button 控件 (btnDelete) 用于删除选中任务
+    - _需求: 3.1_
+  - [x] 2.4 添加统计标签
+    - 添加 Label 控件 (lblStats) 显示任务统计
+    - _需求: 5.1, 5.2_
+
+- [x] 3. 定义数据结构
+  - [x] 3.1 创建 TaskItem 内部类
+    - 在 Form1 类内部定义 TaskItem 类
+    - 包含 Content (string) 和 IsCompleted (bool) 属性
+    - _需求: 4.1_
+  - [x] 3.2 声明成员变量
+    - 声明 List<TaskItem> tasks 存储任务
+    - 声明 string jsonPath 存储文件路径
+    - _需求: 4.1_
+
+- [x] 4. 实现 JSON 读写功能
+  - [x] 4.1 实现 SaveTasks 方法
+    - 使用 System.Text.Json 序列化任务列表
+    - 写入 tasks.json 文件
+    - _需求: 4.1_
+  - [x] 4.2 实现 LoadTasks 方法
+    - 检查文件是否存在
+    - 读取并反序列化 JSON 文件
+    - 文件不存在时使用空列表
+    - _需求: 4.2, 4.3_
+
+- [x] 5. 实现核心功能
+  - [x] 5.1 实现添加任务功能
+    - btnAdd_Click 事件处理
+    - 检查输入是否为空
+    - 创建新 TaskItem 并添加到列表
+    - 保存到 JSON，刷新显示，清空输入框
+    - _需求: 1.1, 1.2, 1.3_
+  - [x] 5.2 实现删除任务功能
+    - btnDelete_Click 事件处理
+    - 获取选中项并从列表移除
+    - 保存到 JSON，刷新显示
+    - _需求: 3.1, 3.2_
+  - [x] 5.3 实现完成状态切换
+    - lstTasks_ItemCheck 事件处理
+    - 切换对应任务的 IsCompleted 状态
+    - 保存到 JSON
+    - _需求: 2.1_
+
+- [x] 6. 实现辅助功能
+  - [x] 6.1 实现 RefreshList 方法
+    - 清空 CheckedListBox
+    - 遍历任务列表，添加到控件
+    - 设置已完成任务的勾选状态
+    - _需求: 6.2_
+  - [x] 6.2 实现 UpdateStats 方法
+    - 计算总任务数和已完成数
+    - 更新 lblStats 显示
+    - _需求: 5.1, 5.2_
+  - [x] 6.3 实现窗体加载事件
+    - Form1_Load 中调用 LoadTasks
+    - 调用 RefreshList 和 UpdateStats
+    - _需求: 4.2_
+
+- [ ] 7. 美化界面
+  - 设置窗体标题为"待办事项"
+  - 设置合适的窗体大小
+  - 设置控件字体和颜色
+  - _需求: 6.1, 6.2_
