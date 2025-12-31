@@ -140,7 +140,7 @@ namespace LibraryManagement.Forms
             // btnBorrow
             // 
             this.btnBorrow.Font = new System.Drawing.Font("宋体", 10F);
-            this.btnBorrow.Location = new System.Drawing.Point(140, 190);
+            this.btnBorrow.Location = new System.Drawing.Point(151, 190);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(100, 35);
             this.btnBorrow.TabIndex = 1;

@@ -1,7 +1,7 @@
 -- ============================================
 -- 图书管理系统 - 数据库初始化脚本
 -- 数据库名称：LibraryDB
--- 创建日期：2024年12月
+-- 创建日期：2025年12月
 -- ============================================
 
 -- 第一步：创建数据库
@@ -148,19 +148,19 @@ GO
 IF NOT EXISTS (SELECT * FROM Readers WHERE ReaderID = 'R001')
 BEGIN
     INSERT INTO Readers (ReaderID, ReaderName, Gender, Phone, RegisterDate) 
-    VALUES ('R001', '张伟', '男', '13800138001', '2024-01-15');
+    VALUES ('R001', '张伟', '男', '13800138001', '2025-01-15');
     
     INSERT INTO Readers (ReaderID, ReaderName, Gender, Phone, RegisterDate) 
-    VALUES ('R002', '李娜', '女', '13800138002', '2024-02-20');
+    VALUES ('R002', '李娜', '女', '13800138002', '2025-02-20');
     
     INSERT INTO Readers (ReaderID, ReaderName, Gender, Phone, RegisterDate) 
-    VALUES ('R003', '王强', '男', '13800138003', '2024-03-10');
+    VALUES ('R003', '王强', '男', '13800138003', '2025-03-10');
     
     INSERT INTO Readers (ReaderID, ReaderName, Gender, Phone, RegisterDate) 
-    VALUES ('R004', '刘芳', '女', '13800138004', '2024-04-05');
+    VALUES ('R004', '刘芳', '女', '13800138004', '2025-04-05');
     
     INSERT INTO Readers (ReaderID, ReaderName, Gender, Phone, RegisterDate) 
-    VALUES ('R005', '陈明', '男', '13800138005', '2024-05-18');
+    VALUES ('R005', '陈明', '男', '13800138005', '2025-05-18');
 END
 GO
 
@@ -169,21 +169,21 @@ IF NOT EXISTS (SELECT * FROM BorrowRecords WHERE ReaderID = 'R001' AND BookID = 
 BEGIN
     -- 已归还的记录
     INSERT INTO BorrowRecords (ReaderID, BookID, BorrowDate, DueDate, ReturnDate) 
-    VALUES ('R001', 'B001', '2024-10-01', '2024-10-31', '2024-10-25');
+    VALUES ('R001', 'B001', '2025-10-01', '2025-10-31', '2025-10-25');
     
     INSERT INTO BorrowRecords (ReaderID, BookID, BorrowDate, DueDate, ReturnDate) 
-    VALUES ('R002', 'B005', '2024-10-15', '2024-11-14', '2024-11-10');
+    VALUES ('R002', 'B005', '2025-10-15', '2025-11-14', '2025-11-10');
     
     -- 未归还的记录
     INSERT INTO BorrowRecords (ReaderID, BookID, BorrowDate, DueDate, ReturnDate) 
-    VALUES ('R003', 'B002', '2024-12-01', '2024-12-31', NULL);
+    VALUES ('R003', 'B002', '2025-12-01', '2025-12-31', NULL);
     
     INSERT INTO BorrowRecords (ReaderID, BookID, BorrowDate, DueDate, ReturnDate) 
-    VALUES ('R004', 'B006', '2024-12-10', '2025-01-09', NULL);
+    VALUES ('R004', 'B006', '2025-12-10', '2025-01-09', NULL);
     
     -- 逾期未还的记录（用于测试逾期查询）
     INSERT INTO BorrowRecords (ReaderID, BookID, BorrowDate, DueDate, ReturnDate) 
-    VALUES ('R005', 'B003', '2024-11-01', '2024-12-01', NULL);
+    VALUES ('R005', 'B003', '2025-11-01', '2025-12-01', NULL);
 END
 GO
 
