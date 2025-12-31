@@ -18,7 +18,6 @@ namespace LibraryManagement.Forms
         private void InitializeComponent()
         {
             this.grpSearch = new System.Windows.Forms.GroupBox();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnStatistics = new System.Windows.Forms.Button();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
@@ -31,7 +30,6 @@ namespace LibraryManagement.Forms
             // 
             // grpSearch
             // 
-            this.grpSearch.Controls.Add(this.btnRefresh);
             this.grpSearch.Controls.Add(this.btnStatistics);
             this.grpSearch.Controls.Add(this.dtpEndDate);
             this.grpSearch.Controls.Add(this.dtpStartDate);
@@ -81,14 +79,6 @@ namespace LibraryManagement.Forms
             this.btnStatistics.Text = "统计";
             this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(475, 20);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.Text = "刷新";
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // dgvStatistics
             // 
             this.dgvStatistics.AllowUserToAddRows = false;
@@ -127,7 +117,6 @@ namespace LibraryManagement.Forms
         #endregion
 
         private System.Windows.Forms.GroupBox grpSearch;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnStatistics;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
